@@ -1,0 +1,27 @@
+
+  <ion-view title="Lestvica" ng-controller="LeaderboardController as view">
+    <ion-content class="has-header view_Leaderboard" has-bouncing="false" scrollbar-x="false" direction="y">
+      
+      <ion-refresher pulling-text="Pull to refresh" on-refresh="view.refreshLeaderboard( true );"></ion-refresher>
+
+      <ion-list>
+        <ion-item 
+        	ng-repeat="Song in view.leaderboardData" 
+        	class="item-icon-right"
+        	ng-click="view.selectSong( Song.Id );"
+        	>
+          
+          <img ng-src="{{mainConfig.SiteUrl + Song.Image}}" />
+
+          <div class="text">
+            <b>{{Song.Title}}</b>
+            <br />
+            {{Song.Band}}
+          </div>
+          
+          <i class="icon ion-chevron-right iocn-accessory"></i>
+      </ion-list>
+      
+    </ion-content>
+  </ion-view>
+    

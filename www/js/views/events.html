@@ -1,0 +1,34 @@
+
+  <ion-view title="Dogodki" ng-controller="EventsController as view">
+    <ion-content class="has-header view_Events" has-bouncing="false" scrollbar-x="false" direction="y">
+      
+      <ion-refresher pulling-text="Pull to refresh" on-refresh="view.refreshData( true );"></ion-refresher>
+
+      <ion-list>
+        <ion-item 
+        	ng-repeat="Event in view.eventsData" 
+        	class="item-icon-right"
+        	>
+        	<!-- ng-click="view.selectEvent( Event.Id );" -->
+
+	        <!--
+	        <img ng-src="{{mainConfig.SiteUrl + Event.Image}}" />
+	        <br />
+	        -->
+			<div class="title">{{Event.Title}}</div>
+			
+			<div class="date">
+				{{Event.Date}}
+				{{Event.Hour}}
+			</div>
+
+			<div class="band">
+				{{Event.BandsList}}
+			</div>
+
+			<!--<i class="icon ion-chevron-right iocn-accessory"></i>-->
+
+      </ion-list>
+      
+    </ion-content>
+  </ion-view>

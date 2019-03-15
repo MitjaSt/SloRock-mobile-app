@@ -1,0 +1,19 @@
+
+  <ion-view title="Radio S" class="view_Radio" ng-controller="RadioController as view">
+    <ion-content class="has-header padding" has-bouncing="false" scrollbar-x="false" direction="y" scroll="false">
+
+    	<div class="wrapper">
+    		<h3>Predvajaj Radio S</h3>
+			<button id="audioControl" class="button" ng-class="view.audioControlState" ng-click="view.playRadio();"></button>
+		</div>
+
+    	
+		<br />
+		<br />
+
+		<audio id="RadioAudio" controls="controls" preload="none">
+  			<source src="http://live4.infonetmedia.si/radios?type=.mp3&13202692901&duration=0&id=scplayer&autostart=true" type="audio/mp3">
+		</audio>
+    </ion-content>
+  </ion-view>
+    

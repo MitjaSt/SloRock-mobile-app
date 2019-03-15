@@ -1,0 +1,545 @@
+  
+  /* Empty. Add your own CSS if you like */
+    
+  @charset "UTF-8";
+
+  @import 'partials/fonts';
+  
+  /* COLORS */
+  $color_Red: #FE1F1F;
+  $color_Grey: #464545;
+
+  hr.line
+  {
+      border: 0;
+      height: 1px;
+      background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+      background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+      background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+      background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+  }
+
+  
+  /* HEADER */
+  .bar-header
+  {
+    background: #000;
+    border: none;
+
+    .title
+    {
+      font-weight: bold;
+      color: $color_Red;
+    }
+
+    .button
+    {
+      color: $color_Red !important;
+    }
+  }
+
+  /* NAVIGATION */
+  .menu
+  {
+    .bar
+    {
+      background: #000;
+      color: $color_Red;
+      height: 44px;
+    }
+
+    .scroll-content .item
+    {
+      border: none;
+      border-top: 1px solid #000;
+
+      color: $color_Red;
+
+      .item-content
+      {
+      background: $color_Grey;
+      }
+    }
+
+    .list
+    {
+      padding-top: 0;
+    }
+  }
+
+  /* CONTENT */
+  .scroll-refresher .text-pulling,
+  .scroll-refresher i
+  {
+    color: $color_Red;
+  }
+  
+  .scroll-content
+  {
+    color: #FFF;
+    background: #464545;
+
+    a,
+    a:hover,
+    a:visited
+    {
+      text-decoration: none;
+      color: $color_Red;
+    }
+
+    h1, h2, h3
+    {
+      color: $color_Red;
+    }
+
+    h4
+    {
+      color: #FFF;
+    }
+
+    .item
+    {
+      border: none;
+      border-bottom: 3px solid #000;
+
+      background: #464545;
+      color: #FFF;
+      white-space: normal;
+    }
+    
+    .icon.ion-chevron-right
+    {
+      color: $color_Red;
+    }
+
+    .scroll-bar-indicator
+    {
+      background: rgba( 254, 31, 31, .5 );
+    }
+  }
+
+
+
+  /***************
+   * LEADERBOARD
+   **************/
+  .view_Leaderboard
+  {
+
+    img
+    {
+      float: left;
+      height: 60px;
+      margin-right: 10px;
+    }
+  }
+
+  /************************
+   * LEADERBOARD - SONG
+   ***********************/
+
+  .view_Leaderboard_Song 
+  {
+    .header
+    {
+      padding: 10px;
+      min-height: 115px;
+      
+      .left
+      {
+        float: left;
+        width: 60%;
+        overflow: hidden;
+
+        h2,
+        h3,
+        h4
+        {
+          margin: 0;
+          padding: 0;
+
+          font-size: 22px;
+        }
+
+        h3
+        {
+          font-size: 16px;
+        }
+
+        h4
+        {
+          font-size: 14px;
+          font-weight: normal;
+          margin: 5px 0;
+        }
+
+        .image,
+        .description
+        {
+          float: left;
+          margin: 0;
+          padding: 0;
+        }
+
+        .description
+        {
+          float: none;
+        }
+
+        .image
+        {
+          background-size: cover;
+
+          width: 60px;
+          height: 65px;
+
+          margin-right: 20px;
+          margin-bottom: 40px;
+        }
+      }
+
+      .right
+      {
+        float: right;
+        width:  105px;
+
+        .vote
+        {
+          padding: 10px;
+          cursor: pointer;
+
+          min-width: 105px;
+
+          .img
+          {
+            background: url( ../img/hand.png ) center center no-repeat;
+            background-size: contain;
+
+            width: 35px;
+            height: 55px;
+
+            margin: 0 auto 10px auto;
+          }
+
+          .title
+          {
+            font-family: 'BostonTraffic';
+            text-align: center;
+          }
+        }
+
+        .vote.activated
+        {
+          color: $color_Red;
+
+          .img
+          {
+            background: url( ../img/hand_red.png ) center center no-repeat;
+            background-size: cover;
+          }
+        }
+      }
+
+    }
+
+    .button-bar
+    {
+      box-sizing: border-box;
+      padding: 0;
+
+
+      font-family: 'BostonTraffic';
+
+      border-bottom: 1px solid $color_Red;
+
+      a
+      {
+        background: black;
+
+        border: none;
+        border-right: 1px solid $color_Grey;
+
+        padding-top: 5px;
+        line-height: 42px;
+      }
+
+      a.active
+      {
+        background: $color_Red;
+        color: #FFF;
+        transition: all 120ms ease-in;
+      }
+
+      a:last
+      {
+        border-right: none;
+      }
+    }
+
+
+
+    .songSlides
+    {
+      height: 100%;
+      color: #FFF;
+
+      iframe
+      {
+        position: absolute;
+
+        width: 100%;
+        height: 100%;
+
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        margin: auto;
+      }
+
+      .slider-slide
+      {
+        
+      }
+
+      .line
+      {
+        clear: both;
+        padding: 10px 20px;
+
+        .left,
+        .right
+        {
+
+          float: left;
+
+          width: 30%;
+        }
+
+        .left
+        {
+          font-weight: bold;
+        }
+
+        .right
+        {
+          width: 70%;
+        }
+      }
+
+    }
+  }
+
+
+
+  /***********
+   * EVENTS
+   **********/
+  .view_Events
+  {
+
+    .title
+    {
+      color: $color_Red;
+      font-weight: bold;
+    }
+
+    .date
+    {
+      font-weight: bold;
+    }
+
+  }
+
+  /* RADIO */
+  .view_Radio
+  {
+    .wrapper
+    {
+      width: 70%;
+      height: 50%;
+
+      position: absolute;
+
+      top: 25%;
+      left: 15%;
+
+      box-sizing: border-box;
+    }
+
+    h3
+    {
+      position: absolute;
+      top: -50px;
+    }
+
+    #audioControl
+    {
+      position: absolute;
+
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+
+      width: 100%;
+      height: 100%;
+
+      font-size: 4em;
+
+    }
+
+    audio
+    {
+      display: none;
+
+    }
+  }
+
+
+  /* POPUPS */
+  .backdrop
+  {
+    background-color: rgba( 0, 0, 0, .4 );
+  }
+
+  .popup-container
+  {
+    .popup
+    {
+      width: 280px;
+      background: #464545;
+      color: #FFF;
+
+      .button
+      {
+        background: #000;
+        color: $color_Red;
+        font-family: 'BostonTraffic';
+        border: none;
+      }
+    }
+
+    .popup-head
+    {
+      background: #000;
+      padding: 0;
+      border: none;
+
+      .popup-title
+      {
+
+        font-family: 'BostonTraffic';
+        text-align: center;
+        color: $color_Red;
+        font-size: 24px;
+        line-height: 48px;
+
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+
+  /* FOOTER */
+  .bar-footer
+  {
+    padding: 0;
+    height: 49px;
+    bottom: 0px;
+    background: black;
+    
+    /*
+    .tabs-top>.tabs,
+    .tabs.tabs-top
+    {
+      top: 0px;
+    }
+    */
+
+    .tabs
+    {
+      border: none;
+      border-top: 1px solid $color_Grey;
+      background: black;
+      height: 49px;
+    }
+
+    .icon.customFont-appbarleaderboard
+    {
+      padding-top: 2px;
+
+      line-height: 49px;
+      font-size: 50px;
+    }
+
+    .icon
+    {
+      line-height: 49px;
+      font-size: 28px;
+
+      color: $color_Red;
+    }
+
+    .tab-item-active
+    {
+      .icon.customFont-appbarleaderboard
+      {
+        font-size: 60px;
+      }
+
+      .icon
+      {
+        font-size: 36px;
+      }
+    }
+  }
+
+
+
+  /* MISC */
+  .preloadImages
+  {
+    display: none;
+  }
+
+  .loading-container
+  {
+    background: rgba( 0, 0, 0, 0 );
+
+    .loading
+    {
+      border-radius: 0;
+      color: $color_Red;
+      font-size: 50px;
+    }
+  }
+
+
+
+
+  /* RESPONSIVE */
+  @media( max-width:380px )
+  {
+    .view_Leaderboard_Song
+    {
+      .header .left
+      {
+        width: 65%;
+
+        .image
+        {
+          width: 50px;
+        }
+      }
+
+      .header .right .vote
+      {
+        min-width: auto;
+        width: 80%;
+        background-size: contain;
+        font-size: 12px;
+      }
+    }
+  }

@@ -1,0 +1,184 @@
+
+  <ion-view class="view_Leaderboard_Song" view-title="{{view.Title}}" ng-controller="LeaderboardSongController as view">
+    <ion-content class="has-header" scroll="false">
+
+      <div class="header padding">
+
+        <div class="left">
+          <div class="image" style="background-image: url( {{ mainConfig.SiteUrl + Song.Image }} ); "></div>
+          
+          <div class="description">
+            <h2>{{Song.Title}}</h2>
+            <h3>{{Song.Band}}</h3>
+            <h4>{{Song.Votes}} glasov</h4>
+          </div>
+        </div>
+
+        <div class="right">
+
+          <div class="vote" ng-click="view.songVote()" ng-if="userVoteStatus === 1">
+            <div class="img"></div>
+            <div class="title">Glasuj</div>
+          </div>          
+
+          <div class="vote activated disabled" ng-if="userVoteStatus === 2">
+            <div class="img"></div>
+            <div class="title">Glas oddan</div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="clearfix"></div>
+
+
+      <div class="button-bar">
+          <a class="button" ng-click="view.selectTab( 1 );" ng-class="{ 'active' : currentTabNo == 0 }">Predvajaj</a>
+          <a class="button" ng-click="view.selectTab( 2 );" ng-class="{ 'active' : currentTabNo == 1 }" ng-show="Song.Lyrics_HTML">Besedilo</a>
+          <a class="button" ng-click="view.selectTab( 3 );" ng-class="{ 'active' : currentTabNo == 2 }">Info</a>
+      </div>
+
+      <ion-slide-box  class="songSlides sliderFixHeight"
+                      does-continue="false" 
+                      auto-play="false" 
+                      disable-scroll="true"
+                      show-pager="false" 
+                      on-slide-changed="view.slideChanged( $index )"
+                    >
+
+        <ion-slide class="songSlide">
+          <iframe ng-src="{{Song.YouTubeUrl}}" frameborder="0" allowfullscreen class="ytIframe"></iframe>
+        </ion-slide>
+        
+        <ion-slide class="songSlide">
+
+          <ion-content direction="y">
+            <div class="box info">
+              
+              <div class="line">
+                <div ng-bind-html="Song.Lyrics_HTML"></div>
+              </div>
+
+            </div>
+          </ion-content>
+
+        </ion-slide>
+        
+        <ion-slide class="songSlide">
+          <ion-content direction="y">
+
+            <div class="box band">
+              
+              <div class="line" ng-show="Song.Title">
+                <div class="left">
+                  Pesem
+                </div>
+                <div class="right">
+                  {{Song.Title}}
+                </div>
+              </div>
+              
+              <div class="line" ng-show="Song.Album">
+                <div class="left">
+                  Album
+                </div>
+                <div class="right">
+                  {{Song.Album}}
+                </div>
+              </div>
+              
+              <div class="line" ng-show="Song.Band">
+                <div class="left">
+                  Izvajalec
+                </div>
+                <div class="right">
+                  {{Song.Band}}
+                </div>
+              </div>
+
+              <div class="line" ng-show="Song.Band_Location">
+                <div class="left">
+                  Kraj
+                </div>
+                <div class="right">
+                  {{Song.Band_Location}}
+                </div>
+              </div>
+
+              <div class="line" ng-show="Song.Publisher">
+                <div class="left">
+                  Založba
+                </div>
+                <div class="right">
+                  {{Song.Publisher}}
+                </div>
+              </div>
+
+              <div class="line" ng-show="Song.Zvrst">
+                <div class="left">
+                  Zvrst
+                </div>
+                <div class="right">
+                  {{Song.Zvrst}}
+                </div>
+              </div>
+              
+              <div class="line" ng-show="Song.AlbumDate">
+                <div class="left">
+                  Leto izdaje
+                </div>
+                <div class="right">
+                  {{Song.AlbumDate}}
+                </div>
+              </div>
+              
+              
+              <div class="line" ng-show="Song.Length">
+                <div class="left">
+                  Dolžina
+                </div>
+                <div class="right">
+                  {{Song.Length}}
+                </div>
+              </div>
+              
+              <div class="line" ng-show="Song.Url">
+                <div class="left">
+                  SloRock naslov
+                </div>
+                <div class="right">
+                  <a ng-href="{{Song.Url}}" target="_blank">{{Song.Url}}</a>
+                </div>
+              </div>
+
+              <div class="line" ng-show="Song.Band_Website">
+                <div class="left">
+                  Www:
+                </div>
+                <div class="right">
+                  <a ng-href="{{Song.Band_Website}}" target="_blank">{{Song.Band_Website}}</a>
+                </div>
+              </div>
+
+              <div class="line" ng-show="Song.Band_Members_All">
+                <div class="left">
+                  Člani:
+                </div>
+                <div class="right" ng-bind-html="Song.Band_Members_All"></div>
+              </div>
+
+              <div class="line" ng-show="Song.Band_Description_HTML">
+                <h3>O bandu:</h3>
+                <div ng-bind-html="Song.Band_Description_HTML"></div>
+              </div>
+            
+            </div>
+
+          </ion-content>
+        </ion-slide>
+
+      </ion-slide-box>
+
+    </ion-content>
+  </ion-view>
